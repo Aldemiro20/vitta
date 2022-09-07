@@ -35,19 +35,7 @@ class Authcontroller extends Controller
                 $newUser->password=$hash;
                 $newUser->save();
 
-                $token=auth()->attempt([
-                    "email"=>$email,
-                    "password"=>$password,
-                ]);
-
-                if(!$token){
-                    $array['error']="Ocorreu um erro!";
-                    return $array;
-                }
-
-                $info=auth()->user();
-                $array['data']=$info;
-                $array['token']=$token;
+              
 
             }else{
                 $array["error"]="Email ja cadastrado";
