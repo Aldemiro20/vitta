@@ -11,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable implements JWTSubject
 {
   use Notifiable;
-
+  public $timestamps=false;
   Protected $hidden=["password"];
     public function getJWTIdentifier(){
         return $this->getKey();
