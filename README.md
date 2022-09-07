@@ -1,2 +1,2 @@
 # GIO
- Aplicativo para gerenciar contactos
+ Aplicativo para controlo de paciente
