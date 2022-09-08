@@ -19,13 +19,14 @@ Route::post("/auth/refresh", [AuthController::class, 'refresh']);
 Route::post('/user', [AuthController::class, 'create']);
 
 Route::get('/user', [UserController::class, 'read']);
-Route::get("/user/favorites", [UserController::class, 'getFavorites']);
-Route::post("/user/favorites", [UserController::class, 'addFavorite']);
+Route::put('/user', [UserController::class, 'update']);
+Route::post('/user_d', [UserController::class, 'delete']);
 Route::get('/users', [UserController::class, 'list']);
 
 Route::post("/contact", [ContactController::class, 'create']);
 Route::get("/contacts", [ContactController::class, 'list']);
 Route::put("/contact", [ContactController::class, 'update']);
+Route::post('/contact_d', [ContactController::class, 'delete']);
 Route::get("/search", [ContactController::class, 'search']);
 
 
