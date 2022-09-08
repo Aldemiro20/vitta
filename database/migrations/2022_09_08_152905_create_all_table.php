@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAllTables extends Migration
+class CreateAllTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,17 +19,14 @@ class CreateAllTables extends Migration
             $table->string('email')->unique();
             $table->string('password');
         });
-        Schema::create('userFavorites', function (Blueprint $table) {
-            $table->id();
-            $table->integer('id_user');
-            $table->integer('id_contact'); 
-        });
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->integer('telephone');
-            $table->datetime('ap_datetime');
+            $table->datetime('created_at'); 
+            $table->datetime('updated_at');
+            $table->tinyInteger('status');
         });
 
     }
@@ -42,7 +39,6 @@ class CreateAllTables extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
-        Schema::dropIfExists('userFavorites');
         Schema::dropIfExists('contacts');
     }
 }
