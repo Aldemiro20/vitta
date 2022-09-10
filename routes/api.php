@@ -23,9 +23,10 @@ Route::put('/user', [UserController::class, 'update']);
 Route::post('/user_d', [UserController::class, 'delete']);
 Route::get('/users', [UserController::class, 'list']);
 
+Route::post('/contact_q', [ContactController::class, 'listQ']);
 Route::post("/contact", [ContactController::class, 'create']);
-Route::get("/contacts", [ContactController::class, 'list']);
-Route::put("/contact", [ContactController::class, 'update']);
+Route::post("/contacts", [ContactController::class, 'list']);
+Route::put("/contact_u", [ContactController::class, 'update']);
 Route::post('/contact_d', [ContactController::class, 'delete']);
 Route::get("/search", [ContactController::class, 'search']);
 

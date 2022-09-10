@@ -30,6 +30,9 @@ class ContactController extends Controller
             $name=$request->input("name");
             $email=$request->input("email");
             $telephone=$request->input("telephone");
+            $created_at=$request->input("created_at");
+            $updated_at=$request->input("updated_at");
+            $status=0;
 
             $emailExists=Contact::where("email",$email)->count();
             if($emailExists===0){
@@ -39,9 +42,10 @@ class ContactController extends Controller
                 $newUser->name=$name;
                 $newUser->email=$email;
                 $newUser->telephone=$telephone;
+                $newUser->created_at=$created_at;
+                $newUser->updated_at=$updated_at;
+                $newUser->status=$status;
                 $newUser->save();
-
-               
                 $array['code']="200";
                     
 
@@ -60,10 +64,24 @@ class ContactController extends Controller
     }
 
     public function list(Request $request){
-        $array=['error'=>""];
-        $contact=Contact::all();
 
-        $array['data']=$contact;
+        $array=['error'=>""];
+        $status=$request->input("status");
+        $contacts = Contact::select()
+        ->where('status', "=",$status)->get();
+
+        $array['data']=$contacts;
+
+        return $array;
+    }
+    public function listQ(Request $request){
+
+        $array=['error'=>""];
+        $id=$request->input("id");
+        $contacts = Contact::select()
+        ->where('id', "=",$id)->get();
+
+        $array['data']=$contacts;
 
         return $array;
     }
@@ -116,7 +134,6 @@ class ContactController extends Controller
         $rules = [
             'name' => 'min:2',
             'email' => 'email|unique:users',
-            'telephone' => 'telephone',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -125,14 +142,17 @@ class ContactController extends Controller
             $array['error'] = $validator->messages();
             return $array;
         }
-
-        $name = $request->input('name');
+        
+       // $name = $request->input('name');
         $email = $request->input('email');
         $telephone = $request->input('telephone');
         $id = $request->input('id');
-
+        $created_at = $request->input('created_at');
+        $updated_at = $request->input('updated_at');
+        $status = $request->input('status');
         $contact = Contact::find($id);
-
+        $name = $request->input('name');
+        if($contact){
         if($name) {
             $contact->name = $name;
         }
@@ -144,9 +164,19 @@ class ContactController extends Controller
         if($telephone) {
             $contact->telephone =$telephone;
         }
-        $contact->save();
+
+        $created_at->created_at =$created_at;
+        $updated_at->updated_at =$updated_at;
+        $status->status =$status;
+
+        $array["code"]="200";
+        $contact->update();
+    }else{
+        $array["error"]=$email; 
+    }
 
         return $array;
     }
+
 }
  
