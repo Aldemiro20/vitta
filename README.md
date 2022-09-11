@@ -1,4 +1,6 @@
 # Vitta
- Aplicativo para controlo de atendimento de paciente.O Aplicativo tem 2 niveis de acesso. 
+ Aplicativo para controlo de atendimento de paciente.O Aplicativo tem 2 niveis de acesso. acesso 1 admin, e acesso 2 funcionario. o admin pode fazer login, ver os pacientes e os funcionarios cadastrado, pode eliminar o paciente ou funcionario, pode cadastrar um funcionario novo e fazer logout. o funcionario pode fazer login, ver os paciente cadastrado, ver o estado do paciente se esta em espera ou atendido, pode atender o paciente, pode editar os dados do paciente, pode pesquisar o paciente, e pode fazer logout.
+ 
+ Aplicativo feito com React Native e Laravel. A sua api encontra-se hospedada no Heroku.
 
  
