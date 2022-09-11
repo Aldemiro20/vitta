@@ -6,6 +6,8 @@
  
  O funcionario pode fazer login, ver os paciente cadastrado, ver o estado do paciente se esta em espera ou atendido, pode atender o paciente, pode editar os dados do paciente, pode pesquisar o paciente, e pode fazer logout.
  
- Aplicativo feito com React Native e Laravel. A sua api encontra-se hospedada no Heroku.
+ Aplicativo feito com React Native e typescript.
+ E a API feita com o Laravel. utilizou-se o JWT para autenticar as requisições.
+ A API encontra-se hospedada no Heroku.
 
  
