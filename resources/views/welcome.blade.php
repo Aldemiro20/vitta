@@ -21,6 +21,8 @@
         </style>
     </head>
     <body class="antialiased">
-        <h5>Sucesso</h5>
+        <div style="align-items: center, justify-content: center">
+        <h5>Acesso restrito</h5>
+         </div>
     </body>
 </html>
