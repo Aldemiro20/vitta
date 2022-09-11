@@ -21,7 +21,8 @@ Route::post('/user', [AuthController::class, 'create']);
 Route::get('/user', [UserController::class, 'read']);
 Route::put('/user', [UserController::class, 'update']);
 Route::post('/user_d', [UserController::class, 'delete']);
-Route::get('/users', [UserController::class, 'list']);
+Route::post('/users', [UserController::class, 'list']);
+Route::post('/user_id', [UserController::class, 'listId']);
 
 Route::post('/contact_q', [ContactController::class, 'listQ']);
 Route::post("/contact", [ContactController::class, 'create']);

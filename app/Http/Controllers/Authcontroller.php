@@ -49,9 +49,9 @@ class AuthController extends Controller
                 }
 
                 $info = auth()->user();
-                $info['avatar'] = url('media/avatars/'.$info['avatar']);
                 $array['data'] = $info;
                 $array['token'] = $token;
+                $array['code'] = "200";
             } else {
                 $array['error'] = 'E-mail já cadastradoo!';
                 return $array;

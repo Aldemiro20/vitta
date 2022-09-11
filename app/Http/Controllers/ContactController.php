@@ -132,7 +132,7 @@ class ContactController extends Controller
 
        
         $rules = [
-            'name' => 'min:2',
+            
             'email' => 'email|unique:users',
         ];
 
@@ -143,15 +143,16 @@ class ContactController extends Controller
             return $array;
         }
         
-       // $name = $request->input('name');
+     
+        $name = $request->input('name');
         $email = $request->input('email');
         $telephone = $request->input('telephone');
         $id = $request->input('id');
-        $created_at = $request->input('created_at');
-        $updated_at = $request->input('updated_at');
         $status = $request->input('status');
+        $updated_at= $request->input('updated_at');
+      
         $contact = Contact::find($id);
-        $name = $request->input('name');
+       
         if($contact){
         if($name) {
             $contact->name = $name;
@@ -164,10 +165,14 @@ class ContactController extends Controller
         if($telephone) {
             $contact->telephone =$telephone;
         }
+        if($status) {
+            $contact->status =$status;
+        }
+        if($updated_at) {
+            $contact->updated_at =$updated_at;
+        }
 
-        $created_at->created_at =$created_at;
-        $updated_at->updated_at =$updated_at;
-        $status->status =$status;
+
 
         $array["code"]="200";
         $contact->update();
