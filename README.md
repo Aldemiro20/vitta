@@ -1,8 +1,6 @@
 # Vitta
- Aplicativo para controlo de atendimento de paciente.
- O Aplicativo tem 2 niveis de acesso. 
- Admin.
- Funcionario.
+ Vitta é um aplicativo para controlo de atendimento de paciente.
+ O Aplicativo tem 2 niveis de acesso. Admin e Funcionario.
  
  O admin pode fazer login, ver os pacientes e os funcionarios cadastrado, pode eliminar o paciente ou funcionario, pode cadastrar um funcionario novo e fazer logout. 
  
