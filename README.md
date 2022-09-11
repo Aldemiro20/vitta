@@ -1,5 +1,6 @@
 # Vitta
  Vitta é um aplicativo para controlo de atendimento de paciente.
+ 
  O Aplicativo tem 2 niveis de acesso. Admin e Funcionario.
  
  O admin pode fazer login, ver os pacientes e os funcionarios cadastrado, pode eliminar o paciente ou funcionario, pode cadastrar um funcionario novo e fazer logout. 
@@ -8,8 +9,8 @@
  
  Aplicativo feito com React Native e typescript.
  
- E a API feita com o Laravel. utilizou-se o JWT para autenticar as requisições.
+ API feita com o Laravel. utilizou-se o JWT para autenticar as requisições.
  
- A API encontra-se hospedada no Heroku.
+ API encontra-se hospedada no Heroku.
 
  
