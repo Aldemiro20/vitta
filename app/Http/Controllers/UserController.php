@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+
 use App\Models\Contact;
 use App\Models\User;
+
 
 
 class UserController extends Controller
@@ -27,7 +30,7 @@ class UserController extends Controller
 
         return $array;
     }
-   
+  
     public function listId(Request $request){
 
        
@@ -122,5 +125,7 @@ public function list(Request $request){
 
     return $array;
 }
+
+
     
 }

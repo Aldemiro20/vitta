@@ -30,7 +30,7 @@ Route::post("/contacts", [ContactController::class, 'list']);
 Route::put("/contact_u", [ContactController::class, 'update']);
 Route::post('/contact_d', [ContactController::class, 'delete']);
 Route::get("/search", [ContactController::class, 'search']);
-
+Route::get('/user_admin/ad_d', [ContactController::class, 'admin']);
 
 
 

