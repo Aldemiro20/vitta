@@ -6,17 +6,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AllController;
 Route::get("/ping", function(){
     return ["/pong"=>true];
 });
 
-Route::get("/401", [AuthController::class, 'unauthourized'])->name("login");
+Route::get("/401", [AllController::class, 'unauthourized'])->name("login");
 
-Route::post("/auth/login", [AuthController::class, 'login']);
-Route::post("/auth/logout", [AuthController::class, 'logout']);
-Route::post("/auth/refresh", [AuthController::class, 'refresh']);
-Route::post('/user', [AuthController::class, 'create']);
+Route::post("/auth/login", [AllController::class, 'login']);
+Route::post("/auth/logout", [AllController::class, 'logout']);
+Route::post("/auth/refresh", [AllController::class, 'refresh']);
+Route::post('/user', [AllController::class, 'create']);
 
 Route::get('/user', [UserController::class, 'read']);
 Route::put('/user', [UserController::class, 'update']);
