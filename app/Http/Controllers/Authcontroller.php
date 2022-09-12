@@ -10,7 +10,7 @@ use App\Models\Contact;
 class AuthController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth:api', ['except' => ['create', 'login', 'unauthorized']]);
+        $this->middleware('auth:api', ['except' => ['create', 'login']]);
     }
 
     public function create(Request $request) {
@@ -106,9 +106,5 @@ class AuthController extends Controller
         return $array;
     }
 
-    public function unauthorized() {
-        return response()->json([
-            'error' => 'Não autorizado'
-        ], 401);
-    }
+  
 }

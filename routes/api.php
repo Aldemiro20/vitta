@@ -4,14 +4,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\AuthController;
 Route::get("/ping", function(){
     return ["/pong"=>true];
 });
 
-Route::get("/401", [AuthController::class, 'unauthourized'])->name("login");
 
 Route::post("/auth/login", [AuthController::class, 'login']);
 Route::post("/auth/logout", [AuthController::class, 'logout']);
