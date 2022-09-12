@@ -9,7 +9,9 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    
+    public function __construct() {
+        $this->middleware('auth:api', ['except' => ['create', 'login', 'unauthorized']]);
+    }
 
     public function create(Request $request) {
         $array = ['error'=>''];
