@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
+
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
 Route::get("/ping", function(){
@@ -12,8 +13,9 @@ Route::get("/ping", function(){
 
 
 
+Route::post("/auth/login", [App\Http\Controllers\AuthController::class, 'login']);
 
-Route::post('/auth/login', 'App\Http\Controllers\AuthController@login');
+
 Route::get('/user', [UserController::class, 'read']);
 Route::put('/user', [UserController::class, 'update']);
 Route::post('/user_d', [UserController::class, 'delete']);
