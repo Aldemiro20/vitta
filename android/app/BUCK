@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.gio",
+    package = "com.vitta.app",
 )
 
 android_resource(
     name = "res",
-    package = "com.gio",
+    package = "com.vitta.app",
     res = "src/main/res",
 )
 
