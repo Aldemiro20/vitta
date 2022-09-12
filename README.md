@@ -1,2 +1,2 @@
-# GIO
- Aplicativo para gerenciar contactos
+# Vitta
+ Aplicativo para controlo e atendimento de paciente
