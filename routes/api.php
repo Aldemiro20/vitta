@@ -11,12 +11,9 @@ Route::get("/ping", function(){
 });
 
 
+
+
 Route::post('/auth/login', 'App\Http\Controllers\AuthController@login');
-Route::get('/auth/logout', 'App\Http\Controllers\AuthController@logout');
-Route::get('/auth/refresh', 'App\Http\Controllers\AuthController@refresh');
-Route::post('/user', 'App\Http\Controllers\AuthController@create');
-
-
 Route::get('/user', [UserController::class, 'read']);
 Route::put('/user', [UserController::class, 'update']);
 Route::post('/user_d', [UserController::class, 'delete']);
