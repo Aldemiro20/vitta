@@ -12,5 +12,8 @@
  API feita com o Laravel. utilizou-se o JWT para autenticar as requisições.
  
  API encontra-se hospedada no Heroku.
+ 
+ credencias para testar;
+ email: admin@gmail.com; senha:1234
 
  
