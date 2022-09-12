@@ -11,10 +11,12 @@ Route::get("/ping", function(){
     return ["/pong"=>true];
 });
 
+Route::get("/401", [AuthController::class, 'unauthourized'])->name("login");
 
-
-Route::post("/auth/login", [App\Http\Controllers\AuthController::class, 'login']);
-
+Route::post("/auth/login", [AuthController::class, 'login']);
+Route::post("/auth/logout", [AuthController::class, 'logout']);
+Route::post("/auth/refresh", [AuthController::class, 'refresh']);
+Route::post('/user', [AuthController::class, 'create']);
 
 Route::get('/user', [UserController::class, 'read']);
 Route::put('/user', [UserController::class, 'update']);
