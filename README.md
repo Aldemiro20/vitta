@@ -15,6 +15,7 @@
  
  Entra como administrador, cria um usuario funcionario, e testa...
  att: não elimine o administrador
+ 
  credencias para testar;
  email: admin@gmail.com; senha:1234
 
